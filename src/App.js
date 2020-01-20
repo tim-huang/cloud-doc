@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import FileSearch from './components/FileSearch'
+import FileList from './components/FileList'
+import defaultFiles from './utils/defaultFiles'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container-fluid">
+      <div className="row">
+        <div className="col bg-light letf-panel">
+          <FileSearch 
+            title="My Documents" 
+            onFileSearch={(value) => {console.log(value)}}></FileSearch>
+
+          <FileList files={defaultFiles} 
+            onFileClick = {(id) => console.log('click', id)}
+            onFileDelete = {(id) => console.log('delete', id)}
+            onSaveEdit = {(id,value) => console.log('save', id, value)}
+          ></FileList>
+        </div>
+        <div className="col bg-primary right-panel">
+          <h1>this is the right</h1>
+        </div>
+      </div>
+
+
     </div>
   );
 }
