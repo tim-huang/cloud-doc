@@ -7,3 +7,25 @@
 .c-link {
   cursor: pointer;
 }
+
+.start-page {
+  font-size : 30px;
+  height : 300px;
+  line-height: 300px;
+  color : #ccc;
+  text-align : center;
+}
+
+.letf-panel {
+  height : 100vh;
+}
+
+.bottom-btn {
+  position : absolute;
+  width : 100%;
+  bottom : 0px;
+}
+
+.no-border-radius {
+  border-radius: 0px;
+}
